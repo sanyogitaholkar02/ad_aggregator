@@ -1,6 +1,7 @@
 # Ad Aggregator Service
 
 ## Overview
+This is a fresh setup of the AD Aggregator project after a complete cleanup of the previous version. Starting anew to implement a cleaner and more efficient structure.
 
 The **Ad Aggregator** is a high-performance backend system designed to track, process, and analyze ad click events in real time. It powers accurate ad performance measurement by collecting click data from users, validating it, and aggregating clicks per ad and campaign for reporting and analytics.
 
