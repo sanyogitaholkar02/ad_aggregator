@@ -1,7 +1,3 @@
-Here's a clear, professional README file tailored for your **ad-aggregator** project, based on the architecture and flow you shared:
-
----
-
 # Ad Aggregator Service
 
 ## Overview
