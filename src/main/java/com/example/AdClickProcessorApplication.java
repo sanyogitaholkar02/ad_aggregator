@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AdAggregatorApplication {
+public class AdClickProcessorApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AdAggregatorApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AdClickProcessorApplication.class, args);
+    }
 
 }

@@ -1,0 +1,9 @@
+docker exec -it 16e26f2d2702 kafka-console-consumer --topic ad-click-topic-1 --from-beginning --bootstrap-server localhost:9092
+
+
+ad-clicks-group-1
+
+
+docker run -d --name clickhouse -p 8123:8123 -p 9000:9000 -e CLICKHOUSE_USER=default -e CLICKHOUSE_PASSWORD="click@house879" -e CLICKHOUSE_DB=default clickhouse/clickhouse-server:26.2.3
+
+docker exec -it 5bf7778c9 clickhouse-client --user default --password click@house879

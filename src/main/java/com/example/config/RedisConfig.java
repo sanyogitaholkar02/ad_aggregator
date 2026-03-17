@@ -13,7 +13,7 @@ public class RedisConfig {
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration("localhost", 6379);
-        config.setDatabase(1); // DB 1 for ad_aggregator
+        config.setDatabase(1); // DB 1 for ad_click_processor
         return new LettuceConnectionFactory(config);
     }
 

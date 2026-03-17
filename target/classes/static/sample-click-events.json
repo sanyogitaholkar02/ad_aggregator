@@ -1,0 +1,346 @@
+[
+    {
+        "adId": "AD-1004",
+        "campaignId": "camp004",
+        "timestamp": 1741483900000,
+        "redirectUrl": "https://example.com/landing1",
+        "idempotencyKey": "click-acme-001-uuid",
+        "userId": "user-011"
+    },
+    {
+        "adId": "AD-1004",
+        "campaignId": "camp004",
+        "timestamp": 1741483930000,
+        "redirectUrl": "https://example.com/landing1",
+        "idempotencyKey": "click-acme-002-uuid",
+        "userId": "user-045"
+    },
+    {
+        "adId": "AD-1004",
+        "campaignId": "camp004",
+        "timestamp": 1741483960000,
+        "redirectUrl": "https://example.com/landing1",
+        "idempotencyKey": "click-acme-003-uuid",
+        "userId": "user-078"
+    },
+    {
+        "adId": "AD-1005",
+        "campaignId": "camp005",
+        "timestamp": 1741483990000,
+        "redirectUrl": "https://example.com/landing2",
+        "idempotencyKey": "click-beta-001-uuid",
+        "userId": "user-022"
+    },
+    {
+        "adId": "AD-1005",
+        "campaignId": "camp005",
+        "timestamp": 1741484010000,
+        "redirectUrl": "https://example.com/landing2",
+        "idempotencyKey": "click-beta-002-uuid",
+        "userId": "user-089"
+    },
+    {
+        "adId": "AD-1005",
+        "campaignId": "camp005",
+        "timestamp": 1741484025000,
+        "redirectUrl": "https://example.com/landing2",
+        "idempotencyKey": "click-beta-003-uuid",
+        "userId": "user-134"
+    },
+    {
+        "adId": "AD-1006",
+        "campaignId": "CAMP-SP-301",
+        "timestamp": 1741484029000,
+        "redirectUrl": "https://www.spotify.com/premium",
+        "idempotencyKey": "click-sp-001-uuid",
+        "userId": "user-101"
+    },
+    {
+        "adId": "AD-1006",
+        "campaignId": "CAMP-SP-301",
+        "timestamp": 1741484035000,
+        "redirectUrl": "https://www.spotify.com/premium",
+        "idempotencyKey": "click-sp-002-uuid",
+        "userId": "user-256"
+    },
+    {
+        "adId": "AD-1006",
+        "campaignId": "CAMP-SP-301",
+        "timestamp": 1741484042000,
+        "redirectUrl": "https://www.spotify.com/premium",
+        "idempotencyKey": "click-sp-003-uuid",
+        "userId": "user-390"
+    },
+    {
+        "adId": "AD-1007",
+        "campaignId": "CAMP-TS-401",
+        "timestamp": 1741484059000,
+        "redirectUrl": "https://www.tesla.com/model3",
+        "idempotencyKey": "click-ts-001-uuid",
+        "userId": "user-150"
+    },
+    {
+        "adId": "AD-1007",
+        "campaignId": "CAMP-TS-401",
+        "timestamp": 1741484065000,
+        "redirectUrl": "https://www.tesla.com/model3",
+        "idempotencyKey": "click-ts-002-uuid",
+        "userId": "user-333"
+    },
+    {
+        "adId": "AD-1008",
+        "campaignId": "CAMP-NF-501",
+        "timestamp": 1741484129000,
+        "redirectUrl": "https://www.netflix.com/signup",
+        "idempotencyKey": "click-nf-001-uuid",
+        "userId": "user-205"
+    },
+    {
+        "adId": "AD-1008",
+        "campaignId": "CAMP-NF-501",
+        "timestamp": 1741484140000,
+        "redirectUrl": "https://www.netflix.com/signup",
+        "idempotencyKey": "click-nf-002-uuid",
+        "userId": "user-411"
+    },
+    {
+        "adId": "AD-1008",
+        "campaignId": "CAMP-NF-501",
+        "timestamp": 1741484155000,
+        "redirectUrl": "https://www.netflix.com/signup",
+        "idempotencyKey": "click-nf-003-uuid",
+        "userId": "user-587"
+    },
+    {
+        "adId": "AD-1009",
+        "campaignId": "CAMP-AD-601",
+        "timestamp": 1741484189000,
+        "redirectUrl": "https://www.adobe.com/creativecloud",
+        "idempotencyKey": "click-ad-001-uuid",
+        "userId": "user-278"
+    },
+    {
+        "adId": "AD-1009",
+        "campaignId": "CAMP-AD-601",
+        "timestamp": 1741484200000,
+        "redirectUrl": "https://www.adobe.com/creativecloud",
+        "idempotencyKey": "click-ad-002-uuid",
+        "userId": "user-450"
+    },
+    {
+        "adId": "AD-1010",
+        "campaignId": "CAMP-SM-701",
+        "timestamp": 1741484229000,
+        "redirectUrl": "https://www.samsung.com/galaxy-s25",
+        "idempotencyKey": "click-sm-001-uuid",
+        "userId": "user-310"
+    },
+    {
+        "adId": "AD-1010",
+        "campaignId": "CAMP-SM-701",
+        "timestamp": 1741484240000,
+        "redirectUrl": "https://www.samsung.com/galaxy-s25",
+        "idempotencyKey": "click-sm-002-uuid",
+        "userId": "user-512"
+    },
+    {
+        "adId": "AD-1010",
+        "campaignId": "CAMP-SM-701",
+        "timestamp": 1741484250000,
+        "redirectUrl": "https://www.samsung.com/galaxy-s25",
+        "idempotencyKey": "click-sm-003-uuid",
+        "userId": "user-678"
+    },
+    {
+        "adId": "AD-1011",
+        "campaignId": "CAMP-AB-801",
+        "timestamp": 1741484269000,
+        "redirectUrl": "https://www.airbnb.com/experiences",
+        "idempotencyKey": "click-ab-001-uuid",
+        "userId": "user-355"
+    },
+    {
+        "adId": "AD-1011",
+        "campaignId": "CAMP-AB-801",
+        "timestamp": 1741484280000,
+        "redirectUrl": "https://www.airbnb.com/experiences",
+        "idempotencyKey": "click-ab-002-uuid",
+        "userId": "user-620"
+    },
+    {
+        "adId": "AD-1012",
+        "campaignId": "CAMP-DL-901",
+        "timestamp": 1741484329000,
+        "redirectUrl": "https://www.duolingo.com/learn",
+        "idempotencyKey": "click-dl-001-uuid",
+        "userId": "user-442"
+    },
+    {
+        "adId": "AD-1012",
+        "campaignId": "CAMP-DL-901",
+        "timestamp": 1741484340000,
+        "redirectUrl": "https://www.duolingo.com/learn",
+        "idempotencyKey": "click-dl-002-uuid",
+        "userId": "user-550"
+    },
+    {
+        "adId": "AD-1012",
+        "campaignId": "CAMP-DL-901",
+        "timestamp": 1741484355000,
+        "redirectUrl": "https://www.duolingo.com/learn",
+        "idempotencyKey": "click-dl-003-uuid",
+        "userId": "user-715"
+    },
+    {
+        "adId": "AD-1013",
+        "campaignId": "CAMP-UB-1001",
+        "timestamp": 1741484369000,
+        "redirectUrl": "https://www.uber.com/ride",
+        "idempotencyKey": "click-ub-001-uuid",
+        "userId": "user-489"
+    },
+    {
+        "adId": "AD-1013",
+        "campaignId": "CAMP-UB-1001",
+        "timestamp": 1741484380000,
+        "redirectUrl": "https://www.uber.com/ride",
+        "idempotencyKey": "click-ub-002-uuid",
+        "userId": "user-601"
+    },
+    {
+        "adId": "AD-1014",
+        "campaignId": "CAMP-SH-1101",
+        "timestamp": 1741484399000,
+        "redirectUrl": "https://www.shopify.com/start",
+        "idempotencyKey": "click-sh-001-uuid",
+        "userId": "user-520"
+    },
+    {
+        "adId": "AD-1014",
+        "campaignId": "CAMP-SH-1101",
+        "timestamp": 1741484410000,
+        "redirectUrl": "https://www.shopify.com/start",
+        "idempotencyKey": "click-sh-002-uuid",
+        "userId": "user-643"
+    },
+    {
+        "adId": "AD-1015",
+        "campaignId": "CAMP-PP-1201",
+        "timestamp": 1741484429000,
+        "redirectUrl": "https://www.paypal.com/business",
+        "idempotencyKey": "click-pp-001-uuid",
+        "userId": "user-567"
+    },
+    {
+        "adId": "AD-1015",
+        "campaignId": "CAMP-PP-1201",
+        "timestamp": 1741484440000,
+        "redirectUrl": "https://www.paypal.com/business",
+        "idempotencyKey": "click-pp-002-uuid",
+        "userId": "user-722"
+    },
+    {
+        "adId": "AD-1015",
+        "campaignId": "CAMP-PP-1201",
+        "timestamp": 1741484455000,
+        "redirectUrl": "https://www.paypal.com/business",
+        "idempotencyKey": "click-pp-003-uuid",
+        "userId": "user-830"
+    },
+    {
+        "adId": "AD-1016",
+        "campaignId": "CAMP-SL-1301",
+        "timestamp": 1741484469000,
+        "redirectUrl": "https://www.slack.com/get-started",
+        "idempotencyKey": "click-sl-001-uuid",
+        "userId": "user-612"
+    },
+    {
+        "adId": "AD-1016",
+        "campaignId": "CAMP-SL-1301",
+        "timestamp": 1741484480000,
+        "redirectUrl": "https://www.slack.com/get-started",
+        "idempotencyKey": "click-sl-002-uuid",
+        "userId": "user-745"
+    },
+    {
+        "adId": "AD-1017",
+        "campaignId": "CAMP-NT-1401",
+        "timestamp": 1741484499000,
+        "redirectUrl": "https://www.notion.so/product",
+        "idempotencyKey": "click-nt-001-uuid",
+        "userId": "user-688"
+    },
+    {
+        "adId": "AD-1017",
+        "campaignId": "CAMP-NT-1401",
+        "timestamp": 1741484510000,
+        "redirectUrl": "https://www.notion.so/product",
+        "idempotencyKey": "click-nt-002-uuid",
+        "userId": "user-811"
+    },
+    {
+        "adId": "AD-1017",
+        "campaignId": "CAMP-NT-1401",
+        "timestamp": 1741484520000,
+        "redirectUrl": "https://www.notion.so/product",
+        "idempotencyKey": "click-nt-003-uuid",
+        "userId": "user-925"
+    },
+    {
+        "adId": "AD-1018",
+        "campaignId": "CAMP-PL-1501",
+        "timestamp": 1741484529000,
+        "redirectUrl": "https://www.peloton.com/bike",
+        "idempotencyKey": "click-pl-001-uuid",
+        "userId": "user-734"
+    },
+    {
+        "adId": "AD-1018",
+        "campaignId": "CAMP-PL-1501",
+        "timestamp": 1741484540000,
+        "redirectUrl": "https://www.peloton.com/bike",
+        "idempotencyKey": "click-pl-002-uuid",
+        "userId": "user-855"
+    },
+    {
+        "adId": "AD-1019",
+        "campaignId": "CAMP-DB-1601",
+        "timestamp": 1741484559000,
+        "redirectUrl": "https://www.dropbox.com/plans",
+        "idempotencyKey": "click-db-001-uuid",
+        "userId": "user-801"
+    },
+    {
+        "adId": "AD-1019",
+        "campaignId": "CAMP-DB-1601",
+        "timestamp": 1741484570000,
+        "redirectUrl": "https://www.dropbox.com/plans",
+        "idempotencyKey": "click-db-002-uuid",
+        "userId": "user-910"
+    },
+    {
+        "adId": "AD-1020",
+        "campaignId": "CAMP-ZM-1701",
+        "timestamp": 1741484589000,
+        "redirectUrl": "https://www.zomato.com/gold",
+        "idempotencyKey": "click-zm-001-uuid",
+        "userId": "user-899"
+    },
+    {
+        "adId": "AD-1020",
+        "campaignId": "CAMP-ZM-1701",
+        "timestamp": 1741484600000,
+        "redirectUrl": "https://www.zomato.com/gold",
+        "idempotencyKey": "click-zm-002-uuid",
+        "userId": "user-950"
+    },
+    {
+        "adId": "AD-1020",
+        "campaignId": "CAMP-ZM-1701",
+        "timestamp": 1741484615000,
+        "redirectUrl": "https://www.zomato.com/gold",
+        "idempotencyKey": "click-zm-003-uuid",
+        "userId": "user-999"
+    }
+]

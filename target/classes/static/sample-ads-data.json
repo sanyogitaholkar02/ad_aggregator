@@ -1,0 +1,189 @@
+[
+  {
+    "adID": "AD-1004",
+    "redirectURL": "https://example.com/landing1",
+    "campaignId": "camp004",
+    "company": "Acme Corp",
+    "imageURL": "https://example.com/images/ad1.png",
+    "description": "Best deals on electronics",
+    "category": "Technology",
+    "targetAudience": "18-35",
+    "hostingPlatform": "Google"
+  },
+  {
+    "adID": "AD-1005",
+    "redirectURL": "https://example.com/landing2",
+    "campaignId": "camp005",
+    "company": "Beta Inc",
+    "imageURL": "https://example.com/images/ad2.png",
+    "description": "Premium fashion sale",
+    "category": "Fashion",
+    "targetAudience": "25-45",
+    "hostingPlatform": "Facebook"
+  },
+  {
+    "adID": "AD-1006",
+    "redirectURL": "https://www.spotify.com/premium",
+    "campaignId": "CAMP-SP-301",
+    "company": "Spotify",
+    "imageURL": "https://cdn.example.com/ads/spotify-premium.png",
+    "description": "Get 3 months of Spotify Premium free - unlimited music streaming",
+    "category": "Entertainment",
+    "targetAudience": "Music Lovers 18-35",
+    "hostingPlatform": "YouTube"
+  },
+  {
+    "adID": "AD-1007",
+    "redirectURL": "https://www.tesla.com/model3",
+    "campaignId": "CAMP-TS-401",
+    "company": "Tesla",
+    "imageURL": "https://cdn.example.com/ads/tesla-model3.png",
+    "description": "Experience the future of driving - Model 3 starting at $35k",
+    "category": "Automotive",
+    "targetAudience": "Tech Enthusiasts 25-50",
+    "hostingPlatform": "Twitter"
+  },
+  {
+    "adID": "AD-1008",
+    "redirectURL": "https://www.netflix.com/signup",
+    "campaignId": "CAMP-NF-501",
+    "company": "Netflix",
+    "imageURL": "https://cdn.example.com/ads/netflix-originals.png",
+    "description": "Stream thousands of movies and original series",
+    "category": "Entertainment",
+    "targetAudience": "Binge Watchers 16-45",
+    "hostingPlatform": "Instagram"
+  },
+  {
+    "adID": "AD-1009",
+    "redirectURL": "https://www.adobe.com/creativecloud",
+    "campaignId": "CAMP-AD-601",
+    "company": "Adobe",
+    "imageURL": "https://cdn.example.com/ads/adobe-cc.png",
+    "description": "Unleash your creativity with Adobe Creative Cloud - 40% off",
+    "category": "Software",
+    "targetAudience": "Designers & Creatives 20-40",
+    "hostingPlatform": "LinkedIn"
+  },
+  {
+    "adID": "AD-1010",
+    "redirectURL": "https://www.samsung.com/galaxy-s25",
+    "campaignId": "CAMP-SM-701",
+    "company": "Samsung",
+    "imageURL": "https://cdn.example.com/ads/samsung-galaxy-s25.png",
+    "description": "Galaxy S25 Ultra - AI-powered photography redefined",
+    "category": "Electronics",
+    "targetAudience": "Tech Savvy 18-40",
+    "hostingPlatform": "YouTube"
+  },
+  {
+    "adID": "AD-1011",
+    "redirectURL": "https://www.airbnb.com/experiences",
+    "campaignId": "CAMP-AB-801",
+    "company": "Airbnb",
+    "imageURL": "https://cdn.example.com/ads/airbnb-experiences.png",
+    "description": "Book unique travel experiences hosted by locals worldwide",
+    "category": "Travel",
+    "targetAudience": "Travelers 22-45",
+    "hostingPlatform": "Pinterest"
+  },
+  {
+    "adID": "AD-1012",
+    "redirectURL": "https://www.duolingo.com/learn",
+    "campaignId": "CAMP-DL-901",
+    "company": "Duolingo",
+    "imageURL": "https://cdn.example.com/ads/duolingo-learn.png",
+    "description": "Learn a new language in just 5 minutes a day - completely free",
+    "category": "Education",
+    "targetAudience": "Students & Professionals 14-50",
+    "hostingPlatform": "TikTok"
+  },
+  {
+    "adID": "AD-1013",
+    "redirectURL": "https://www.uber.com/ride",
+    "campaignId": "CAMP-UB-1001",
+    "company": "Uber",
+    "imageURL": "https://cdn.example.com/ads/uber-ride.png",
+    "description": "Your ride is minutes away - get $10 off your first trip",
+    "category": "Transportation",
+    "targetAudience": "Urban Commuters 18-55",
+    "hostingPlatform": "Snapchat"
+  },
+  {
+    "adID": "AD-1014",
+    "redirectURL": "https://www.shopify.com/start",
+    "campaignId": "CAMP-SH-1101",
+    "company": "Shopify",
+    "imageURL": "https://cdn.example.com/ads/shopify-store.png",
+    "description": "Launch your online store today - free 14-day trial",
+    "category": "E-Commerce",
+    "targetAudience": "Entrepreneurs 22-45",
+    "hostingPlatform": "LinkedIn"
+  },
+  {
+    "adID": "AD-1015",
+    "redirectURL": "https://www.paypal.com/business",
+    "campaignId": "CAMP-PP-1201",
+    "company": "PayPal",
+    "imageURL": "https://cdn.example.com/ads/paypal-business.png",
+    "description": "Accept payments anywhere - zero setup fees for new merchants",
+    "category": "FinTech",
+    "targetAudience": "Small Business Owners 25-55",
+    "hostingPlatform": "Reddit"
+  },
+  {
+    "adID": "AD-1016",
+    "redirectURL": "https://www.slack.com/get-started",
+    "campaignId": "CAMP-SL-1301",
+    "company": "Slack",
+    "imageURL": "https://cdn.example.com/ads/slack-teams.png",
+    "description": "Where work happens - connect your team with Slack Pro",
+    "category": "Productivity",
+    "targetAudience": "Remote Teams 22-50",
+    "hostingPlatform": "Twitter"
+  },
+  {
+    "adID": "AD-1017",
+    "redirectURL": "https://www.notion.so/product",
+    "campaignId": "CAMP-NT-1401",
+    "company": "Notion",
+    "imageURL": "https://cdn.example.com/ads/notion-workspace.png",
+    "description": "Your all-in-one workspace for notes, docs & project management",
+    "category": "Productivity",
+    "targetAudience": "Knowledge Workers 20-40",
+    "hostingPlatform": "YouTube"
+  },
+  {
+    "adID": "AD-1018",
+    "redirectURL": "https://www.peloton.com/bike",
+    "campaignId": "CAMP-PL-1501",
+    "company": "Peloton",
+    "imageURL": "https://cdn.example.com/ads/peloton-bike.png",
+    "description": "Transform your fitness - live & on-demand cycling classes at home",
+    "category": "Fitness",
+    "targetAudience": "Fitness Enthusiasts 25-50",
+    "hostingPlatform": "Instagram"
+  },
+  {
+    "adID": "AD-1019",
+    "redirectURL": "https://www.dropbox.com/plans",
+    "campaignId": "CAMP-DB-1601",
+    "company": "Dropbox",
+    "imageURL": "https://cdn.example.com/ads/dropbox-cloud.png",
+    "description": "Secure cloud storage for all your files - 2TB for $9.99/mo",
+    "category": "Cloud Storage",
+    "targetAudience": "Professionals & Freelancers 22-50",
+    "hostingPlatform": "LinkedIn"
+  },
+  {
+    "adID": "AD-1020",
+    "redirectURL": "https://www.zomato.com/gold",
+    "campaignId": "CAMP-ZM-1701",
+    "company": "Zomato",
+    "imageURL": "https://cdn.example.com/ads/zomato-gold.png",
+    "description": "Zomato Gold - free delivery & up to 40% extra off on dining",
+    "category": "Food & Dining",
+    "targetAudience": "Foodies 18-40",
+    "hostingPlatform": "Instagram"
+  }
+]

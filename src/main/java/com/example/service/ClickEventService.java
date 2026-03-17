@@ -1,13 +1,19 @@
 package com.example.service;
 
+import java.sql.Timestamp;
 import java.time.Duration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.RedisConnectionFailureException;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.entity.Ads;
+import com.example.exception.AdNotFoundException;
+import com.example.exception.KafkaPublishException;
+import com.example.pojo.AdClick;
 import com.example.pojo.ClickEventRequest;
 import com.example.repo.AdvertismentRepo;
 import com.example.repo.ClickEventRepo;
@@ -15,17 +21,17 @@ import com.example.repo.ClickEventRepo;
 @Service
 public class ClickEventService {
 
+    private static final Logger log = LoggerFactory.getLogger(ClickEventService.class);
+
     private final ClickEventRepo repository;
-
     private final AdvertismentRepo repo;
-
     private final RedisTemplate<String, String> redisTemplate;
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, AdClick> kafkaTemplate;
 
     public static final String TOPIC = "ad-click-topic-1";
 
     public ClickEventService(RedisTemplate<String, String> redisTemplate,
-            KafkaTemplate<String, String> kafkaTemplate, ClickEventRepo repository, AdvertismentRepo repo) {
+            KafkaTemplate<String, AdClick> kafkaTemplate, ClickEventRepo repository, AdvertismentRepo repo) {
         this.repository = repository;
         this.redisTemplate = redisTemplate;
         this.kafkaTemplate = kafkaTemplate;
@@ -33,98 +39,70 @@ public class ClickEventService {
     }
 
     public boolean isDuplicate(String idempotencyKey) {
-        // Check if key exists in Redis
-        return Boolean.TRUE.equals(redisTemplate.hasKey(idempotencyKey));
-    }
-
-    public void markProcessed(String idempotencyKey) {
-        // Storing key in Redis for 1 hour to prevent duplicate
-
-        String redisKey = "ad-aggregator:idempotency:" + idempotencyKey;
-        Boolean exists = redisTemplate.hasKey(redisKey);
-        if (exists == null || !exists) {
-            redisTemplate.opsForValue().set(redisKey, "processed", Duration.ofHours(1));
-            // process the click event
-        } else {
-            // click already processed — ignore
+        try {
+            String redisKey = "ad-click-processor:idempotency:" + idempotencyKey;
+            return Boolean.TRUE.equals(redisTemplate.hasKey(redisKey));
+        } catch (RedisConnectionFailureException ex) {
+            log.error("Redis connection failed during duplicate check for key: {}", idempotencyKey, ex);
+            throw ex; // GlobalExceptionHandler will catch this as 503
         }
     }
 
-    public void produceToKafka(String message) {
-        kafkaTemplate.send(
-                TOPIC, message);
+    public void markProcessed(String idempotencyKey) {
+        try {
+            String redisKey = "ad-click-processor:idempotency:" + idempotencyKey;
+            Boolean exists = redisTemplate.hasKey(redisKey);
+            if (exists == null || !exists) {
+                redisTemplate.opsForValue().set(redisKey, "processed", Duration.ofHours(1));
+                log.info("Marked idempotencyKey as processed: {}", idempotencyKey);
+            } else {
+                log.info("IdempotencyKey already processed, skipping: {}", idempotencyKey);
+            }
+        } catch (RedisConnectionFailureException ex) {
+            log.error("Redis connection failed while marking key processed: {}", idempotencyKey, ex);
+            throw ex;
+        }
+    }
+
+    public void produceToKafka(AdClick adClick) {
+        try {
+            kafkaTemplate.send(TOPIC, adClick);
+            log.info("Produced AdClick to Kafka topic '{}': adId={}", TOPIC, adClick.getAdId());
+        } catch (Exception ex) {
+            log.error("Failed to produce AdClick to Kafka topic '{}': adId={}", TOPIC, adClick.getAdId(), ex);
+            throw new KafkaPublishException(TOPIC, ex);
+        }
     }
 
     public String processClickRequest(ClickEventRequest request) {
-        Ads ads = new Ads();
-        ads = repo.findByAdID(request.getAdId());
+
+        // 1. Validate adId is provided
+        if (request.getAdId() == null || request.getAdId().isBlank()) {
+            throw new IllegalArgumentException("adId is required to process a click event");
+        }
+
+        // 2. Lookup the ad from DB — throws AdNotFoundException if not found
+        Ads ads = repo.findByAdID(request.getAdId());
+        if (ads == null) {
+            throw new AdNotFoundException(request.getAdId());
+        }
 
         String redirectUrl = ads.getRedirectURL();
+        log.info("Processing click for adId={}, redirecting to: {}", request.getAdId(), redirectUrl);
 
-        // Produce click event to Kafka
-        String kafkaMessage = String.format(
-                "{\"adId\":\"%s\",\"idempotencyKey\":\"%s\",\"timestamp\":\"%s\"}",
-                request.getAdId(),
-                request.getIdempotencyKey(),
-                java.time.Instant.now().toString());
+        // 3. Create POJO for Kafka
+        AdClick adClick = new AdClick();
+        adClick.setAdId(request.getAdId());
+        adClick.setIdempotencyKey(request.getIdempotencyKey());
+        adClick.setTimestamp(new Timestamp(System.currentTimeMillis()));
 
-        produceToKafka(kafkaMessage);
+        // 4. Produce to Kafka (throws KafkaPublishException on failure)
+        produceToKafka(adClick);
 
-        // Mark processed in Redis
+        // 5. Mark processed in Redis (throws RedisConnectionFailureException on
+        // failure)
         markProcessed(request.getIdempotencyKey());
+
         return redirectUrl;
-
     }
-    /*
-     * First POST → produces Kafka message + 302 redirect
-     * 
-     * Second POST with same idempotencyKey → skips Kafka but still returns 302
-     */
-
-    /*
-     * In-memory aggregation counters
-     * private final Map<String, AtomicInteger> adClickCounts = new
-     * ConcurrentHashMap<>();
-     * private final Map<String, AtomicInteger> campaignClickCounts = new
-     * ConcurrentHashMap<>();
-     * 
-     * Limitations:
-     * In-memory counters won’t survive app restart
-     * Doesn’t handle idempotency
-     * Doesn’t scale horizontally (multiple instances will have inconsistent
-     * counters)
-     * No async processing / Kafka streaming
-     */
-    // public void trackClick(String adId, String campaignId, String userId, String
-    // redirectUrl) {
-
-    // // Validate inputs (basic example)
-    // if (adId == null || campaignId == null || redirectUrl == null) {
-    // throw new IllegalArgumentException("Invalid click data");
-    // }
-    // ClickEvent click = new ClickEvent(adId, campaignId, userId, redirectUrl);
-    // repository.save(click);
-
-    // // Aggregate click counts in memory
-    // adClickCounts.computeIfAbsent(adId, k -> new
-    // AtomicInteger()).incrementAndGet();
-    // campaignClickCounts.computeIfAbsent(campaignId, k -> new
-    // AtomicInteger()).incrementAndGet();
-
-    // System.out.println("Tracked click for ad: " + adId + " redirecting to: " +
-    // redirectUrl);
-    // }
-
-    // // For reporting
-    // public Map<String, Integer> getAdClickCounts() {
-    // Map<String, Integer> result = new ConcurrentHashMap<>();
-    // adClickCounts.forEach((k, v) -> result.put(k, v.get()));
-    // return result;
-    // }
-
-    // public Map<String, Integer> getCampaignClickCounts() {
-    // Map<String, Integer> result = new ConcurrentHashMap<>();
-    // campaignClickCounts.forEach((k, v) -> result.put(k, v.get()));
-    // return result;
-    // }
 }

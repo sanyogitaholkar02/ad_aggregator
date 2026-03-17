@@ -47,6 +47,23 @@ public class Ads {
         this.company = company;
     }
 
+    public Ads(@NotBlank(message = "adID is required") String adID,
+            @NotBlank(message = "redirectURL is required") String redirectURL,
+            @NotBlank(message = "campaignId is required") String campaignId,
+            @NotBlank(message = "company is required") String company, String imageURL, String description,
+            String category, String targetAudience, String hostingPlatform) {
+
+        this.adID = adID;
+        this.redirectURL = redirectURL;
+        this.campaignId = campaignId;
+        this.company = company;
+        this.imageURL = imageURL;
+        this.description = description;
+        this.category = category;
+        this.targetAudience = targetAudience;
+        this.hostingPlatform = hostingPlatform;
+    }
+
     public Ads() {
 
     }
